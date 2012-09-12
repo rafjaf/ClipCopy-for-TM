@@ -1,4 +1,4 @@
-var VERSION = "0.0.1";
+var VERSION = "0.1";
 
 function checkFirstInstall() {
 	chrome.storage.local.get("installedVersion", function(item){

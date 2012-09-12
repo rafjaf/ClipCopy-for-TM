@@ -7,20 +7,46 @@ div#content {
 	width: 720px;
 	text-align: justify;
 }
+pre {
+  border: 1px solid #cacaca;
+  line-height: 1.2em;
+  font: 12px Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace;
+  padding: 10px;
+  margin-left: 20px;
+  margin-bottom: 1.6em;
+  overflow:auto;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background-color: #FAFAFB;
+  color: #393939;
+}
 </style>
 </head>
 <body>
 <div id="container">
 <div id="header">
 <div style="float: left; padding-top: 30px; padding-left: 10px; padding-right: 10px;"><img src="/img/icon48.png"></div>
-<h1>ClipCopy for Tampermonkey 0.0.1</h1>
+<h1>ClipCopy for Tampermonkey 0.1</h1>
 <h2>Thank you for installing this extension!</h2>
 </div>
 <div id="content">
 <h2>Short description</h2>
 <p>This program is an add-on for Tampermonkey allowing an userscript to copy text to the clipboard using GM_setClipboard API.</p>
 <h2>Use instructions</h2>
-<p>This is still a beta version (not active yet!)</p>
+<p>The <a href="https://github.com/scriptish/scriptish/wiki/GM_setClipboard">GM_setClipboard API</a> was introduced in
+<a href="http://scriptish.org/">Scriptish</a>, an add-on for Firefox introducing new functionalities in comparison to Greasemonkey.
+This extension aims at emulating this particular API.</p>
+<p>To activate GM_setClipboard API, insert the following line in the metadata block of your userscript</p>
+<pre>// @require https://raw.github.com/rafjaf/ClipCopy-for-TM/master/lib/installGM_setClipboard.js</pre>
+<p>Afterwards, your can make your userscript copy text to the clipboard with the following command :</p>
+<pre>GM_setClipboard("Text to copy to the clipboard");</pre>
+<p>You can even copy formatted text this way :</p>
+<pre>GM_setClipboard("&lt;u&gt;Formatted&lt;/u&gt; text to copy to the clipboard. &lt;b&gt;Wow!&lt;/b&gt;", "html");</pre>
+<p>If you use the above-mentionned <span style='font: 12px Monaco,"Courier New","DejaVu Sans Mono","Bitstream Vera Sans Mono",monospace'>
+@require</span> metatag, your userscript will still remain compatible with Scriptish. However, the GM_setClipboard API will not
+be available in Greasemonkey.
 <h2>Legal information</h2>
 <p>By using this extension, you agree with the following provisions :</p>
 <p>This program is <b>free software</b> : you can use it, redistribute it and/or modify
@@ -34,8 +60,10 @@ div#content {
     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
     GNU General Public License for more details.</p>
 <h2>Credits</h2>
-<p><a href="https://chrome.google.com/webstore/detail/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=fr">Tampermonkey</a> was created by 
-<a href="http://forum.tampermonkey.net/">Jan Biniok</a> who is not responsible for this program.</p>
+<p><a href="https://chrome.google.com/webstore/detail/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=fr">Tampermonkey</a> is a third-party
+extension for Goggle Chrome.</p>
+<p><a href="http://scriptish.org/">Scriptish</a> and <a href="http://www.greasespot.net/">Greasemonkey</a> are third-party
+extensions for Firefox.</p>
 <p>The code used to copy formatted text to the clipboard was taken from the extension <a href="https://github.com/frawa/copy-url-nicely-chrome">
 copy-url-nicely-chrome</a> written by <a href="https://github.com/frawa">Frank Wagner</a>.</p>
 <p> Unless otherwise specified, the icons and images used in this program were taken from the <a href="http://icongal.com/gallery/iconset/840/oxygen">

@@ -1,6 +1,6 @@
 {
   "name": "ClipCopy for Tampermonkey",
-  "version": "0.0.1",
+  "version": "0.1",
   "manifest_version": 2,
   "description": "Add-on for Tampermonkey allowing an userscript to copy text to the clipboard using GM_setClipboard API",
   "icons": {"16": "/img/icon16.png",
